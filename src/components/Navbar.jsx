@@ -6,6 +6,7 @@ const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'Services', path: '/services' },
   { name: 'About', path: '/about' },
+  { name: 'Gallery', path: '/gallery' },
   { name: 'Testimonials', path: '/testimonials' },
   { name: 'Contact', path: '/contact' },
 ];
@@ -23,9 +24,12 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close the mobile menu on route change (avoid setState directly in effect body).
   useEffect(() => {
-    setIsOpen(false);
-  }, [location]);
+    if (!isOpen) return;
+    const t = setTimeout(() => setIsOpen(false), 0);
+    return () => clearTimeout(t);
+  }, [location.pathname, isOpen]);
 
   return (
     <nav

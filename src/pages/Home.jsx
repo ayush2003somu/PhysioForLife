@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
@@ -46,7 +47,9 @@ const steps = [
 ];
 
 export default function Home() {
-  const drPrakriti = staffData.find((s) => s.id === 1);
+  const drAnsil = staffData.find((s) => s.id === 1);
+  const [failedDoctorSrc, setFailedDoctorSrc] = useState(null);
+
   const testimonialsPreview = (() => {
     const withQuote = testimonialsData.filter((t) => (t?.result || '').trim().length > 0);
     const withoutQuote = testimonialsData.filter((t) => (t?.result || '').trim().length === 0);
@@ -257,7 +260,7 @@ export default function Home() {
 
           <div className="grid sm:grid-cols-3 gap-8 relative">
             {/* Connector line (desktop) */}
-            <div className="hidden sm:block absolute top-16 left-[16%] right-[16%] h-0.5 bg-gradient-to-r from-primary-200 via-accent-200 to-primary-200" />
+            <div className="hidden sm:block absolute top-[20%] left-[16%] right-[16%] h-0.5 bg-gradient-to-r from-primary-200 via-accent-200 to-primary-200" />
 
             {steps.map((item) => {
               const Icon = item.icon;
@@ -358,22 +361,37 @@ export default function Home() {
       </section>
 
       {/* ───── DOCTOR SECTION ───── */}
-      {drPrakriti && (
+      {drAnsil && (
         <section id="doctor-section" className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Visual */}
               <div className="flex justify-center">
                 <div className="relative">
-                  <div className="w-80 h-96 rounded-3xl bg-gradient-to-br from-primary-100 via-primary-50 to-accent-50 flex items-center justify-center shadow-xl shadow-primary-100/30 overflow-hidden">
-                    <div className="text-center">
-                      <div className="w-28 h-28 mx-auto rounded-full bg-gradient-to-br from-primary-400 to-accent-400 flex items-center justify-center text-white text-4xl font-heading font-bold shadow-lg shadow-primary-300/40 animate-float">
-                        P
-                      </div>
+                  <div className="relative w-80 h-96 rounded-3xl bg-gradient-to-br from-primary-100 via-primary-50 to-accent-50 flex items-end justify-center shadow-xl shadow-primary-100/30 overflow-hidden">
+                    {drAnsil.image && drAnsil.image !== failedDoctorSrc && (
+                      <>
+                        <img
+                          src={drAnsil.image}
+                          alt={drAnsil.name}
+                          className="absolute inset-0 w-full h-full object-cover"
+                          loading="lazy"
+                          onError={() => setFailedDoctorSrc(drAnsil.image)}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-white/85 via-white/15 to-transparent" />
+                      </>
+                    )}
+
+                    <div className="relative text-center pb-6 px-6">
+                      {(!drAnsil.image || drAnsil.image === failedDoctorSrc) && (
+                        <div className="w-28 h-28 mx-auto rounded-full bg-gradient-to-br from-primary-400 to-accent-400 flex items-center justify-center text-white text-4xl font-heading font-bold shadow-lg shadow-primary-300/40 animate-float">
+                          {(drAnsil?.name || '?').split(' ').pop().charAt(0)}
+                        </div>
+                      )}
                       <p className="mt-4 font-heading font-bold text-lg text-neutral-700">
-                        {drPrakriti.name}
+                        {drAnsil.name}
                       </p>
-                      <p className="text-sm text-neutral-500">{drPrakriti.role}</p>
+                      <p className="text-sm text-neutral-500">{drAnsil.role}</p>
                     </div>
                   </div>
                   <div className="absolute -bottom-4 -right-4 w-20 h-20 rounded-2xl bg-gradient-to-br from-accent-400 to-accent-500 flex items-center justify-center text-white shadow-lg animate-pulse-soft">
@@ -388,10 +406,10 @@ export default function Home() {
                   Meet Your Doctor
                 </p>
                 <h2 className="font-heading font-bold text-3xl sm:text-4xl text-neutral-900 mb-4">
-                  {drPrakriti.name}
+                  {drAnsil.name}
                 </h2>
-                <p className="text-primary-600 font-medium mb-4">{drPrakriti.role}</p>
-                <p className="text-neutral-500 leading-relaxed mb-6">{drPrakriti.bio}</p>
+                <p className="text-primary-600 font-medium mb-4">{drAnsil.role}</p>
+                <p className="text-neutral-500 leading-relaxed mb-6">{drAnsil.bio}</p>
 
                 {/* Certifications */}
                 <div className="mb-6">
@@ -400,7 +418,7 @@ export default function Home() {
                     Certifications
                   </h4>
                   <div className="space-y-2">
-                    {drPrakriti.certifications.map((cert, i) => (
+                    {drAnsil.certifications.map((cert, i) => (
                       <div
                         key={i}
                         className="flex items-center gap-2 text-sm text-neutral-600"
@@ -416,7 +434,7 @@ export default function Home() {
                   href="#"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 shadow-lg shadow-primary-600/20 hover:-translate-y-0.5 text-sm"
                 >
-                  Book with {drPrakriti.name}
+                  Book with {drAnsil.name}
                   <ArrowRight size={16} />
                 </a>
               </div>

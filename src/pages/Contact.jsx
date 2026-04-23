@@ -13,13 +13,13 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Visit Us',
-    lines: ['Physio For Life Clinic', 'Your City, India'],
+    lines: ['Physio For Life', 'Paharia Varanasi, Uttar Pradesh 221007','Branch: Ground Floor, Kuber Complex, Rathyatra-Sigra, Varanasi Uttar Pradesh 221010'],
   },
   {
     icon: Phone,
     title: 'Call Us',
-    lines: ['+91 XXXXXXXXXX'],
-    href: 'tel:+91XXXXXXXXXX',
+    lines: ['+91 8004500646'],
+    href: 'tel:+918004500646',
   },
   {
     icon: Mail,
@@ -216,7 +216,7 @@ export default function Contact() {
 
               {/* WhatsApp CTA */}
               <a
-                href="https://wa.me/91XXXXXXXXXX?text=Hi%20I%20want%20to%20book%20a%20consultation"
+                href="https://wa.me/918004500646?text=Hi%20I%20want%20to%20book%20a%20consultation"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block group"

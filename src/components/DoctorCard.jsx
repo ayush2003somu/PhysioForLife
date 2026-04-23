@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { Award, BookOpen } from 'lucide-react';
 
 export default function DoctorCard({ doctor, featured = false }) {
+  const [failedSrc, setFailedSrc] = useState(null);
+  const showImage = Boolean(doctor?.image) && doctor.image !== failedSrc;
   return (
     <div
       className={`group relative bg-white rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-primary-100/50 ${
@@ -11,11 +14,13 @@ export default function DoctorCard({ doctor, featured = false }) {
     >
       {/* Image Area */}
       <div className="relative h-64 bg-gradient-to-br from-primary-100 via-primary-50 to-accent-50 flex items-center justify-center overflow-hidden">
-        {doctor.image ? (
+        {showImage ? (
           <img
             src={doctor.image}
             alt={doctor.name}
             className="w-full h-full object-cover"
+            loading="lazy"
+            onError={() => setFailedSrc(doctor.image)}
           />
         ) : (
           <div className="text-center">
@@ -66,7 +71,17 @@ export default function DoctorCard({ doctor, featured = false }) {
             </div>
           </div>
         )}
-
+        {/* Experience */}
+        {doctor.Experience && (
+          <div className="mb-4">
+            <p className="flex items-center gap-1.5 text-xs font-semibold text-neutral-700 uppercase tracking-wider">
+              Experience:
+              <span className="ml-1 text-primary-600 font-bold">
+          {doctor.Experience}
+              </span>
+            </p>
+          </div>
+        )}
         {/* Specializations */}
         {doctor.specializations && doctor.specializations.length > 0 && (
           <div>
