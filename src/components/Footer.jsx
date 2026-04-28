@@ -13,7 +13,7 @@ const services = [
   'Back Pain Rehabilitation',
   'Sports Injury Recovery',
   'Post-Surgery Rehab',
-  'TeleRehab Sessions',
+  'Online Rehab Sessions',
   'Knee & Joint Care',
 ];
 
@@ -104,16 +104,37 @@ export default function Footer() {
             <h3 className="font-heading font-semibold text-white mb-4">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-primary-400 shrink-0 mt-0.5" />
-                <span className="text-sm text-neutral-400">
-                  Physio For Life Clinic,<br />
-                  Your City, India
-                </span>
+                <MapPin size={18} className="text-primary-400 shrink-0 mt-1" />
+                <div className="flex flex-col gap-4 w-full">
+                  <div className="group">
+                    <span className="text-sm font-semibold text-white block mb-1 ">Physio For Life </span>
+                    <a 
+                      href="https://maps.app.goo.gl/gKqMRiimzaEvaBeP9" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-neutral-400 hover:text-primary-300 transition-colors leading-relaxed block"
+                    >
+                      Paharia, Varanasi, 221007
+                    </a>
+                  </div>
+                  <div className="group">
+                    <span className="text-sm font-semibold text-white block mb-1">PhysioForLife Rehabilitation</span>
+                    <a 
+                      href="https://maps.app.goo.gl/QwiEiwgPC1UoJh9f6" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-neutral-400 hover:text-primary-300 transition-colors leading-relaxed block"
+                    >
+                      Ground Floor Shop No 2, <br/>Kuber Complex<br/>
+                      Rathyatra, Varanasi 221001
+                    </a>
+                  </div>
+                </div>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-primary-400 shrink-0" />
-                <a href="tel:+91XXXXXXXXXX" className="text-sm text-neutral-400 hover:text-primary-400 transition-colors">
-                  +91 XXXXXXXXXX
+                <a href="tel:+918004500646" className="text-sm text-neutral-400 hover:text-primary-400 transition-colors">
+                  +91 8004500646
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -125,8 +146,8 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Clock size={18} className="text-primary-400 shrink-0 mt-0.5" />
                 <span className="text-sm text-neutral-400">
-                  Mon – Sat: 9:00 AM – 7:00 PM<br />
-                  Sunday: Closed
+                  Mon – Sat: 10:00 AM – 9:00 PM<br />
+                  Sunday: 10:00 AM - 4:00 PM
                 </span>
               </li>
             </ul>

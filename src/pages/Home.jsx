@@ -78,44 +78,59 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <div className="animate-fade-in-up">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary-50 border border-primary-100 rounded-full text-sm text-primary-700 font-medium mb-6">
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                Now offering TeleRehab sessions
-              </div>
+                  <div className="animate-fade-in-up">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary-50 border border-primary-100 rounded-full text-sm text-primary-700 font-medium mb-6">
+                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                    Now offering Online Rehab sessions
+                    </div>
 
-              <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-neutral-900 leading-tight mb-6">
-                Recover from Pain.{' '}
-                <span className="gradient-text">Return to Performance.</span>
-              </h1>
+                    <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-neutral-900 leading-tight mb-6">
+                    Recover from Pain.{' '}
+                    <span className="gradient-text">Return to Performance.</span>
+                    </h1>
 
-              <p className="text-lg text-neutral-500 leading-relaxed mb-8 max-w-xl">
-                Expert physiotherapy — both in-clinic and online via TeleRehab.
-                Personalized treatment plans designed to get you back to the
-                life you love, faster and stronger.
-              </p>
+                    <p className="text-lg text-neutral-500 leading-relaxed mb-8 max-w-xl">
+                    Expert physiotherapy — both in clinic and online.
+                    Personalized treatment plans designed to get you back to the
+                    life you love, faster and stronger.
+                    </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="#"
-                  id="hero-book-now"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-bold rounded-2xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 shadow-xl shadow-primary-600/25 hover:shadow-primary-600/40 hover:-translate-y-1 text-sm sm:text-base"
-                >
-                  Book Now
-                  <ArrowRight size={18} />
-                </a>
-                <a
-                  href="https://wa.me/918004500646?text=Hi%20I%20want%20to%20book%20a%20consultation"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-2xl hover:bg-green-600 transition-all duration-300 shadow-lg shadow-green-600/20 hover:-translate-y-1 text-sm sm:text-base"
-                >
-                  <MessageCircle size={18} />
-                  WhatsApp
-                </a>
-              </div>
+                    <div className="flex flex-col sm:flex-row gap-4">
+                    <a
+                      href="#"
+                      id="hero-book-now"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-bold rounded-2xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 shadow-xl shadow-primary-600/25 hover:shadow-primary-600/40 hover:-translate-y-1 text-sm sm:text-base"
+                    >
+                      Book Now
+                      <ArrowRight size={18} />
+                    </a>
+                    <a
+                      href="https://wa.me/918004500646?text=Hi%20I%20want%20to%20book%20a%20consultation"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white font-bold rounded-2xl hover:bg-green-600 transition-all duration-300 shadow-lg shadow-green-600/20 hover:-translate-y-1 text-sm sm:text-base"
+                    >
+                      {/* WhatsApp SVG */}
+                      <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="35"
+                      height="35"
+                      fill="none"
+                      viewBox="0 0 32 32"
+                      >
+                      <g>
+                        <circle cx="16" cy="16" r="16" fill="#25D366" />
+                        <path
+                        fill="#fff"
+                        d="M16.02 8.5c-4.13 0-7.49 3.36-7.49 7.5 0 1.32.35 2.6 1.01 3.73l-1.08 3.95 4.06-1.06c1.1.6 2.34.92 3.6.92 4.13 0 7.49-3.36 7.49-7.5s-3.36-7.5-7.49-7.5zm0 13.5c-1.13 0-2.24-.3-3.2-.87l-.23-.13-2.41.63.65-2.35-.15-.24c-.62-.99-.95-2.13-.95-3.29 0-3.48 2.83-6.31 6.29-6.31 3.47 0 6.3 2.83 6.3 6.31 0 3.48-2.83 6.31-6.3 6.31zm3.45-4.77c-.19-.1-1.13-.56-1.3-.62-.17-.06-.3-.1-.43.1-.13.19-.5.62-.62.75-.11.13-.23.14-.42.05-.19-.1-.8-.29-1.53-.93-.57-.51-.95-1.13-1.06-1.32-.11-.19-.01-.29.08-.39.08-.09.19-.23.29-.34.1-.12.13-.2.2-.33.07-.13.03-.24-.01-.34-.05-.1-.43-1.04-.59-1.43-.16-.39-.32-.34-.43-.35-.11-.01-.24-.01-.37-.01-.13 0-.34.05-.52.24-.18.19-.7.68-.7 1.65 0 .97.71 1.91.81 2.04.1.13 1.39 2.13 3.38 2.91.47.16.84.25 1.13.32.47.12.9.1 1.24.06.38-.06 1.13-.46 1.29-.9.16-.44.16-.82.11-.9-.05-.08-.17-.13-.36-.23z"
+                        />
+                      </g>
+                      </svg>
+                      WhatsApp
+                    </a>
+                    </div>
 
-              {/* Trust badges */}
+                    {/* Trust badges */}
               <div className="flex items-center gap-6 mt-10 pt-8 border-t border-neutral-200/60">
                 <div className="flex -space-x-3">
                   {['R', 'P', 'A', 'S'].map((letter, i) => (

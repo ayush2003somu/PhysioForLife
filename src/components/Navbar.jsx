@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
-
+import logo1 from '../media/logo1.png';
+import logo2 from '../media/logo2.png';
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'Services', path: '/services' },
@@ -43,18 +44,9 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center shadow-lg shadow-primary-500/25 group-hover:shadow-primary-500/40 transition-shadow duration-300">
-              <span className="text-white font-heading font-bold text-lg">P</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-heading font-bold text-lg leading-tight text-neutral-900">
-                Physio<span className="text-primary-600">ForLife</span>
-              </span>
-              <span className="text-[10px] text-neutral-400 leading-tight tracking-wider uppercase">
-                Expert Rehabilitation
-              </span>
-            </div>
+          <Link to="#" className="flex items-center gap-2 group">
+          <img src={logo2} className="md:hidden m-4" alt="logo" width={40} />
+          <img src={logo1} alt="logo" className='hidden md:block m-4' width={180} />
           </Link>
 
           {/* Desktop Nav */}

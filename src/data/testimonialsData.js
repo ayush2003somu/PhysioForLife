@@ -482,7 +482,7 @@ export const testimonialsData = [
   }
 ];
 
-export const testimonialsCount = 200;
+export const testimonialsCount = 1000;
 
 export let ratingAverage = 0;
 testimonialsData.forEach((review) => {

@@ -1,6 +1,7 @@
 import { staffData } from '../data/staffData';
 import DoctorCard from '../components/DoctorCard';
 import CTASection from '../components/CTASection';
+import { testimonialsCount } from '../data/testimonialsData';
 import { Heart, Target, Eye, Users, Award, Lightbulb } from 'lucide-react';
 
 const values = [
@@ -27,11 +28,11 @@ const values = [
 ];
 
 const milestones = [
-  { year: '2019', event: 'Dr. Prakriti begins practice with a vision to transform rehabilitation care.' },
-  { year: '2020', event: 'Launched TeleRehab services to reach patients across India during the pandemic.' },
+  { year: '2019', event: 'Dr. Ansil begins practice with a vision to transform rehabilitation care.' },
+  { year: '2020', event: 'Launched PhysioForLife for Online services to reach patients across India during the pandemic.' },
   { year: '2021', event: 'Crossed 100 successfully treated patients with specialization in sports rehab.' },
-  { year: '2023', event: 'Expanded the team and introduced advanced treatment protocols.' },
-  { year: '2024', event: 'Surpassed 200+ patients treated with a 95%+ satisfaction rate.' },
+  { year: '2025', event: 'Expanded the team and introduced advanced treatment protocols.' },
+  { year: '2026', event: 'Surpassed 1000+ patients treated with a 99%+ satisfaction rate.' },
 ];
 
 export default function About() {
@@ -78,7 +79,7 @@ export default function About() {
                   <p className="text-neutral-500 text-sm">Since 2019</p>
                   <div className="mt-8 grid grid-cols-3 gap-4">
                     <div className="p-3 rounded-xl bg-white/80 shadow-sm">
-                      <p className="font-heading font-bold text-xl text-primary-600">200+</p>
+                      <p className="font-heading font-bold text-xl text-primary-600">{testimonialsCount}+</p>
                       <p className="text-xs text-neutral-500">Patients</p>
                     </div>
                     <div className="p-3 rounded-xl bg-white/80 shadow-sm">
@@ -86,7 +87,7 @@ export default function About() {
                       <p className="text-xs text-neutral-500">Years</p>
                     </div>
                     <div className="p-3 rounded-xl bg-white/80 shadow-sm">
-                      <p className="font-heading font-bold text-xl text-primary-600">95%</p>
+                      <p className="font-heading font-bold text-xl text-primary-600">99%</p>
                       <p className="text-xs text-neutral-500">Success</p>
                     </div>
                   </div>
